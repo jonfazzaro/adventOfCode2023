@@ -22,6 +22,25 @@ class TestCalibrate(unittest.TestCase):
     def test_two_lines(self):
         self.assertEqual(93 + 45, calibrate("aln9flk15rng3lag\nowi4ejfa5knef"))
 
+    def test_number_words(self):
+        self.assertEqual(93 + 45, calibrate("aln9flk15rngthreelag\nowi4ejfa5knef"))
+
+    def test_more_number_words(self):
+        self.assertEqual(19, calibrate("woneiejtwoweofj4ij3fjei8ijothreewjoeijf8oininewoiejfo"))
+        self.assertEqual(28, calibrate("woxneiejtwoweofj4ij3fjei8ijothreewjoeijf8oinineightoiejfo"))
+        self.assertEqual(37, calibrate("woxneiejthreeweofj4ij3fjei8ijothreewjoeijf8oinineisevenoiejfo"))
+        self.assertEqual(46, calibrate("woxneiejfourweofj4ij3fjei8ijothreewjoeijf8oinineisixxoiejfo"))
+        self.assertEqual(55, calibrate("woxneiejfiveweofj4ij3fjei8ijothreewjoeijf8oinineisixxfiveoiejfo"))
+
+    def test_number_words_example(self):
+        self.assertEqual(281, calibrate("""two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen"""))
+
     def test_answer(self):
         print(calibrate(input))
 
